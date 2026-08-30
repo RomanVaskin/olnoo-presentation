@@ -25,7 +25,7 @@ export function SlideFrame({ children, index, total, className }: SlideFrameProp
 
       {/* footer / slide meta */}
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-[5cqw] pb-[3.5cqw] text-[1cqw]">
-        <span className="eyebrow text-muted-foreground/70">OLNOO</span>
+        <span className="eyebrow text-muted-foreground/70" aria-hidden="true" />
         <span className="font-mono text-muted-foreground/60 tabular-nums">
           {String(index).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </span>
