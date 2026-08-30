@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SlideFrame } from '@/components/slide-frame'
 
 const pillars = [
@@ -22,6 +23,16 @@ const pillars = [
 export function SlideFinal({ index, total }: { index: number; total: number }) {
   return (
     <SlideFrame index={index} total={total}>
+      {/* atmospheric hero backdrop for brand perception */}
+      <Image
+        src="/images/final-evening.png"
+        alt="Премиальная современная резиденция вечером"
+        fill
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/92 to-background/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/70" />
+
       <div className="absolute inset-0 flex flex-col px-[7cqw] pt-[6.5cqw] pb-[9cqw]">
         <header className="max-w-[62cqw]">
           <p className="eyebrow text-accent text-[1.05cqw] mb-[1.6cqw]">Финал</p>

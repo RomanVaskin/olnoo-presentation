@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SlideFrame } from '@/components/slide-frame'
 
 const blocks = [
@@ -26,6 +27,19 @@ const blocks = [
 export function SlideModel({ index, total }: { index: number; total: number }) {
   return (
     <SlideFrame index={index} total={total}>
+      {/* subtle cropped architectural backdrop, kept quiet behind the model */}
+      <div className="absolute inset-y-0 right-0 w-[45cqw]">
+        <Image
+          src="/images/house-detail.png"
+          alt=""
+          aria-hidden="true"
+          fill
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-card via-card/70 to-card/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-card" />
+      </div>
+
       <div className="absolute inset-0 flex flex-col px-[7cqw] pt-[7cqw] pb-[9cqw]">
         <header className="mb-[4cqw]">
           <p className="eyebrow text-accent text-[1.05cqw] mb-[1.6cqw]">

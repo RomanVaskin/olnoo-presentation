@@ -21,6 +21,9 @@ export default function Page() {
           title="Фундамент"
           subtitle="Подготовка инфраструктуры и базы для запуска продвижения"
           sectionLabel="Ключевые задачи"
+          image="/images/site-territory.png"
+          imageAlt="Премиальный загородный посёлок среди леса"
+          imageSide="left"
           tasks={[
             'Анализ рынка и конкурентов',
             'Определение целевой аудитории и портретов покупателей',
@@ -39,6 +42,10 @@ export default function Page() {
           stageLabel="Этап 2"
           title="Запуск и тестирование каналов трафика"
           sectionLabel="Ключевые задачи"
+          image="/images/villa-glass.png"
+          imageAlt="Современная загородная вилла со стеклянным фасадом в лесу"
+          imageSide="right"
+          visual="traffic"
           tasks={[
             'Настройка и запуск Яндекс Директ',
             'Оптимизация и продвижение профиля в ЦИАН',
@@ -56,6 +63,10 @@ export default function Page() {
           stageLabel="Этап 3"
           title="Лид-система и CRM"
           sectionLabel="Ключевые задачи"
+          image="/images/residence-forest.png"
+          imageAlt="Премиальная лесная резиденция в сумерках"
+          imageSide="left"
+          visual="funnel"
           tasks={[
             'Сбор лидов из всех каналов',
             'Настройка CRM и автоматизации',
@@ -73,8 +84,21 @@ export default function Page() {
           stageLabel="Этап 4"
           title="Контент, социальные сети и бренд"
           sectionLabel="Ключевые задачи"
-          image="/images/brand-interior.png"
-          imageAlt="Интерьер премиального загородного дома"
+          imageSide="right"
+          images={[
+            {
+              src: '/images/brand-interior.png',
+              alt: 'Интерьер премиального загородного дома',
+            },
+            {
+              src: '/images/house-detail.png',
+              alt: 'Архитектурная деталь фасада из дерева и камня',
+            },
+            {
+              src: '/images/landscape-nature.png',
+              alt: 'Природное окружение премиального посёлка',
+            },
+          ]}
           tasks={[
             'Фото- и видеоконтент территории и объектов',
             'Экспертные статьи и полезные материалы',
