@@ -63,6 +63,11 @@
     overflow: hidden;
     position: relative;
   }
+
+  /* The print-only deck never shows on screen. */
+  .print-deck {
+    display: none;
+  }
 }
 
 /* Small helper to keep serif numerals/letters spaced for eyebrows */
@@ -74,43 +79,58 @@
 /* ---------- Print / PDF export ---------- */
 @media print {
   @page {
-    size: 1280px 720px;
+    /* Physical 16:9 page (13.333in × 7.5in = standard widescreen slide). */
+    size: 13.333in 7.5in;
     margin: 0;
   }
 
   html,
   body {
     background: #0f0f11 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .no-print {
+  /* Hide the PDF button and the entire on-screen deck. */
+  .no-print,
+  .deck {
     display: none !important;
   }
 
-  .deck {
-    gap: 0 !important;
+  /* The dedicated print deck is the only thing that prints. */
+  .print-deck {
+    display: block !important;
+    margin: 0 !important;
     padding: 0 !important;
+    gap: 0 !important;
   }
 
-  .slide {
-    width: 1280px !important;
-    height: 720px !important;
+  /* Each print slide is exactly one physical 16:9 page. */
+  .print-deck .slide {
+    position: relative !important;
+    display: block !important;
+    width: 13.333in !important;
+    height: 7.5in !important;
     max-width: none !important;
     aspect-ratio: auto !important;
     margin: 0 !important;
+    padding: 0 !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
+    overflow: hidden !important;
     break-after: page;
     page-break-after: always;
     break-inside: avoid;
     page-break-inside: avoid;
-    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .slide:last-child {
+  /* The final slide must not spawn a trailing blank page. */
+  .print-deck .slide:last-child {
     break-after: auto;
     page-break-after: auto;
   }
